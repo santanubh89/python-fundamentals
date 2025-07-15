@@ -1,0 +1,3 @@
+Command to install external modules:
+pip install <package_name>
+eg: pip install pandas
