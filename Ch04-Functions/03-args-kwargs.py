@@ -24,3 +24,11 @@ def process_order(**kwargs):
 
 process_order(fruit = 'apple', vegetable = 'lettuce')
 process_order(beverage = 'soda', vegetable = 'papaya')
+
+# args and kwargs
+def my_func(*args, **kwargs):
+    print(f'args: {args}, type: {type(args)}')
+    print(f'kwargs: {kwargs}, type: {type(kwargs)}')
+    print(f'I want {args[0]} {kwargs["food"]}s')
+
+my_func(5, 10, 15, fruit = 'Apple', food = 'Bread', animal = 'Dog')
