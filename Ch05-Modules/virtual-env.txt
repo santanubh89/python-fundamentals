@@ -1,0 +1,9 @@
+create a virtual environment:
+    python3 -m venv my_env
+will create a directory and store the libs inside the directory
+
+activate the virtual environment:
+    source my_env/bin/activate
+
+deactivate the virtual environment:
+    deactivate

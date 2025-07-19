@@ -1,3 +1,5 @@
 Command to install external modules:
 pip install <package_name>
 eg: pip install pandas
+
+pip3 install pandas==1.4.4
