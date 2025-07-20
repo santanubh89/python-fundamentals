@@ -7,3 +7,9 @@ activate the virtual environment:
 
 deactivate the virtual environment:
     deactivate
+
+save dependencies in requirements.txt:
+    pip3 freeze > requirements.txt
+
+install all dependencies:
+    pip install -r requirements.txt
