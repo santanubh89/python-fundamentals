@@ -1,5 +1,6 @@
 import os
 import shutil
+import time
 
 f = open('data.txt', 'w')
 f.write('This is OS Module demo')
@@ -19,5 +20,11 @@ for folder, subfolders, files in os.walk(f'{pwd}/data'):
     print(f'Subfolders = {subfolders}')
     print(f'Files = {files}')
 
-# Delete a directory
-shutil.rmtree(f'{pwd}/data')
+# Remove a directory
+shutil.rmtree(f'{pwd}/test_dir')
+print(f'Removed test_dir')
+time.sleep(5)
+
+# Copy a directory
+shutil.copytree(f'{pwd}/test_dir_bk', f'{pwd}/test_dir')
+print('File copied successfully')
