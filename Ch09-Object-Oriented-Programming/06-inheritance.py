@@ -4,13 +4,13 @@ class UserData:
         self.password = password
 
     def login(self):
-        print(f'Logged in as {self.username}')
+        print(f'login (parent): Logged in as {self.username}')
 
     def logout(self):
-        print(f'Logging out user {self.username}')
+        print(f'logout (parent): Logging out user {self.username}')
 
     def fetch_data(self):
-        print(f'Username: {self.username} | Password: {self.password}')
+        print(f'fetch_data (parent): Username: {self.username} | Password: {self.password}')
 
 class SystemUser(UserData):
     def __init__(self, username, password, role):
@@ -18,21 +18,26 @@ class SystemUser(UserData):
         self.role = role
 
     def login(self):
-        print(f'{self.username} Logged in as {self.role}')
+        print(f'login (SystemUser): {self.username} Logged in as {self.role}')
 
 class EndUser(UserData):
-    pass
+    def logout(self):
+        print(f'logout (Enduser) called in child class - will call parent')
+        super().logout()
 
+print(f'------Inspecting Child: SystemUser------')
 sys_user = SystemUser('Foo', 'Secret', 'Admin')
 sys_user.login()
 sys_user.fetch_data()
 sys_user.logout()
 
+print(f'------Inspecting Child: EndUser------')
 end_user = EndUser('Bar', 'Password')
 end_user.login()
 end_user.fetch_data()
 end_user.logout()
 
+print(f'------Inspecting Child: GeneralUser------')
 general_user = UserData('Baz', None)
 general_user.login()
 general_user.fetch_data()

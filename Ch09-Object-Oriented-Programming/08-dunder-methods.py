@@ -7,6 +7,9 @@ class Student():
         self._name = name
         self._score = score
 
+    def __len__(self):
+        return len(self._name)
+
     def __eq__(self, other):
         return self._id == other._id
 
@@ -19,8 +22,14 @@ class Student():
     def __add__(self, other):
         return self._score + other._score
 
-    def __str__(self):
+    def __call__(self, *args, **kwargs):
+        print(f'Student object {self._name} called with args: {args}, kwargs: {kwargs}')
+
+    def __strx__(self):
         return json.dumps(self.__dict__)
+
+    def __repr__(self):
+        return f'Student({self._id}, {self._name}, {self._score})'
 
     def __del__(self):
         print(f'Deleting {self._name}')
@@ -39,5 +48,11 @@ print(f'Alpha > Beta: {alpha1 > beta}')
 print(f'Sum of {alpha1._name} and {beta._name} is {alpha1 + beta}')
 
 print(f'String form of object: {str(alpha1)}')
+
+print(f'Student: {alpha1}')
+
+print(f'Length of Alpha: {len(alpha1)}')
+
+alpha1(10, 20, age=12, school='ABC')
 
 del alpha1
