@@ -33,3 +33,12 @@ print(f'List value = {list}, type = {type(list)}') # type = <class 'list'>
 # dict
 num_map = {1: 'one', 2: 'two', 3: 'three'}
 print(f'Dictionary value = {num_map}, type = {type(num_map)}') # type = <class 'dict'>
+
+# int => whole numbers => 3, 50, 170
+# float => decimal numbers => 2.3, 3.14, 17.05
+# str => ordered sequence of characters => "hello", 'world', "2500"
+# list => ordered sequence of other types => [10, "hello", 200.3, True]
+# dict => key value pairs => {"key1" : "value1", "key2" : "value2"}
+# tup => ordered immutable sequence of other types => (10, "hello", 200.3, True)
+# set => unordered collection of unique objects => {"a", "b"}
+# bool => logical true or false => True | False
